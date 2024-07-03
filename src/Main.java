@@ -5,8 +5,10 @@ import java.util.*;
 
 public class Main extends JFrame {
     public static void main(String[] args) {
+        int xCoordinate = 10;
+        int yCoordinate = 8;
         Map map = new Map();
-        JFrame frame = map.createMap(10,8);
+        JFrame frame = map.createMap(xCoordinate,yCoordinate);
         frame.setFont(new Font("System", Font.BOLD, 0));
 
         //basic settings

@@ -14,6 +14,15 @@ public class Parts {
         this.xPos = position[0];
         this.yPos = position[1];
     }
+
+    void move (int x, int y) {
+        xPos = x;
+        yPos = y;
+    }
+
+    void rotate (Direction[] direction) {
+        this.direction = direction;
+    }
 }
 
 class Wire extends Parts {

@@ -1,5 +1,5 @@
 enum CommandType {
-    NONE(0), NEW(1),EXECUTE(2),MOVE(3), ROTATE(4);
+    NONE(0), NEW(1),EXECUTE(2),MOVE(3), ROTATE(4), DELETE(5);
 
     private final int value;
     CommandType(int value) { this.value = value; }

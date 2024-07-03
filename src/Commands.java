@@ -33,16 +33,18 @@ class Commands {
         CommandType commandType = null;
         switch (command) {
             case "new":     commandType = CommandType.NEW;
-                break;
+                            break;
             case "execute": commandType = CommandType.EXECUTE;
-                break;
+                            break;
             case "move":    commandType = CommandType.MOVE;
-                break;
+                            break;
             case "rotate":  commandType = CommandType.ROTATE;
-                break;
+                            break;
+            case "delete":  commandType = CommandType.DELETE;
+                            break;
             default:        commandType = CommandType.NONE;
-                System.out.println("Unknown command");
-                break;
+                            System.out.println("Unknown command");
+                            break;
         }
         return commandType;
     }
@@ -104,9 +106,16 @@ class Commands {
         return parts;
     }
 
-    void movePart(Parts part, int xPos, int yPos) {
+    void movePart(Parts part, int[] pos) {
+        part.move(pos[0], pos[1]);
+    }
+
+    static void rotatePart(Parts part, Direction[] direction) {
+        part.rotate(direction);
+    }
+
+    void searchPart(Parts part, int[] pos) {
 
     }
-//    void rotatePart (Parts part, )
 }
 
