@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Commands {
 
     Direction[] defineDirections(String directions) {
@@ -45,7 +47,7 @@ class Commands {
         return commandType;
     }
 
-    PartType definePartType(String part) {
+    static PartType definePartType(String part) {
         PartType partType = null;
         switch (part) {
             case "wire":    partType = PartType.WIRE;
@@ -68,11 +70,43 @@ class Commands {
         return partType;
     }
 
-    int[] definePosition(String position) {
+    //actions
+    static int[] definePosition(String position) {
         String[] posStr = position.split(",");
         int[] posInt = new int[2];
         posInt[0] = Integer.parseInt(posStr[0]);
         posInt[1] = Integer.parseInt(posStr[1]);
         return posInt;
     }
+
+    static ArrayList<Parts> createParts(PartType part, Direction[] d, int[] position) {
+        int xPos = position[0];
+        int yPos = position[1];
+        ArrayList<Parts> parts = new ArrayList<Parts>();
+        switch (part.getValue()) {
+            case 1: parts.add(new Wire(d, xPos, yPos));
+                break;
+            case 2: parts.add(new AndGate(d, xPos, yPos));
+                break;
+            case 3: parts.add(new OrGate(d, xPos, yPos));
+                break;
+            case 4: parts.add(new NotGate(d, xPos, yPos));
+                break;
+            case 5: parts.add(new NAndGate(d, xPos, yPos));
+                break;
+            case 6: parts.add(new NOrGate(d, xPos, yPos));
+                break;
+            case 7: parts.add(new XOrGate(d, xPos, yPos));
+                break;
+            default:System.out.println("unknown command");
+                break;
+        }
+        return parts;
+    }
+
+    void movePart(Parts part, int xPos, int yPos) {
+
+    }
+//    void rotatePart (Parts part, )
 }
+
