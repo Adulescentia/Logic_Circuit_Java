@@ -1,19 +1,13 @@
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.plaf.FontUIResource;
 import java.util.*;
 
 public class Main extends JFrame {
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
-
-
-        //griding   //28*20
-        frame.setLayout(new GridLayout(20, 28, 0, 0)); //행, 열 , 좌우 간격, 상하 간격
-        for (int ypos = 20; ypos >= 1; ypos--) {
-            for (int xpos = 1; xpos <= 28; xpos++) {
-                frame.add(new JButton(xpos + "," + ypos));
-            }
-        }
+        Map map = new Map();
+        JFrame frame = map.createMap(10,8);
+        frame.setFont(new Font("System", Font.BOLD, 0));
 
         //basic settings
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);

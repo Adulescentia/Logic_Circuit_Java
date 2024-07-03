@@ -15,3 +15,13 @@ enum Direction {
 
     public int getValue() {return value;}
 }
+
+enum PartType {
+    NONE(0),WIRE(1), AND(2), OR(3), NOT(4), NAND(5), NOR(6), XOR(7);
+
+    private final int value;
+    PartType(int value) { this.value = value; }
+
+    public int getValue() {return value;}
+}
+
