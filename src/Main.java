@@ -17,5 +17,8 @@ public class Main extends JFrame {
         frame.setTitle("Logic_Circuit");
         frame.setVisible(true);
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        while (true) {
+            console.run();
+        }
     }
 }

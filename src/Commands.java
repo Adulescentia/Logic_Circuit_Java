@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 class Commands {
 
@@ -29,7 +30,7 @@ class Commands {
         return direction;
     }
 
-    CommandType defineCommandType(String command) {
+    static CommandType defineCommandType(String command) {
         CommandType commandType = null;
         switch (command) {
             case "new":     commandType = CommandType.NEW;
@@ -76,38 +77,48 @@ class Commands {
     static int[] definePosition(String position) {
         String[] posStr = position.split(",");
         int[] posInt = new int[2];
-        posInt[0] = Integer.parseInt(posStr[0]);
-        posInt[1] = Integer.parseInt(posStr[1]);
+        try {
+            posInt[0] = Integer.parseInt(posStr[0]);
+            posInt[1] = Integer.parseInt(posStr[1]);
+        } catch (NumberFormatException e1) {
+            return new int[]{0, 0};
+        }
         return posInt;
     }
 
-    static Parts[][] createParts(PartType part, Direction[] d, int[] position) {
+    static Parts createParts(PartType partType, Direction[] d, int[] position) {
         int xPos = position[0];
         int yPos = position[1];
-        Parts[][] parts = new Parts[xPos][yPos];
-        switch (part.getValue()) {
-            case 1: parts[xPos-1][yPos-1] = new Wire(d, xPos, yPos);
+        Parts part = null;
+        switch (partType.getValue()) {
+            case 1: part = new Wire(d, xPos, yPos);
                 break;
-            case 2: parts[xPos-1][yPos-1] = new AndGate(d, xPos, yPos);
+            case 2: part = new AndGate(d, xPos, yPos);
                 break;
-            case 3: parts[xPos-1][yPos-1] = new OrGate(d, xPos, yPos);
+            case 3: part = new OrGate(d, xPos, yPos);
                 break;
-            case 4: parts[xPos-1][yPos-1] = new NotGate(d, xPos, yPos);
+            case 4: part = new NotGate(d, xPos, yPos);
                 break;
-            case 5: parts[xPos-1][yPos-1] = new NAndGate(d, xPos, yPos);
+            case 5: part = new NAndGate(d, xPos, yPos);
                 break;
-            case 6: parts[xPos-1][yPos-1] = new NOrGate(d, xPos, yPos);
+            case 6: part = new NOrGate(d, xPos, yPos);
                 break;
-            case 7: parts[xPos-1][yPos-1] = new XOrGate(d, xPos, yPos);
+            case 7: part = new XOrGate(d, xPos, yPos);
                 break;
             default:System.out.println("unknown command");
                 break;
         }
-        return parts;
+        return part;
     }
 
-    static void movePart(Parts part, int[] pos) {
-        part.move(pos[0], pos[1]);
+    static Parts[][] movePart(int[] originalPos, int[] pos, Parts[][] parts) {
+        try {
+            parts[originalPos[0]][originalPos[1]].move(pos[0], pos[1]);
+        } catch (NullPointerException e1) {
+            System.out.println("There is noting");
+        }
+        parts[originalPos[0]][originalPos[1]] = null;
+        return parts;
     }
 
     static void rotatePart(Parts part, Direction[] direction) {
