@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 class Commands {
 
-    Direction[] defineDirections(String directions) {
+    static Direction[] defineDirections(String directions) {
         int index = 0;
         Direction[] direction = new Direction[4];
         for (String d : directions.split(",")) {
@@ -81,24 +81,24 @@ class Commands {
         return posInt;
     }
 
-    static ArrayList<Parts> createParts(PartType part, Direction[] d, int[] position) {
+    static Parts[][] createParts(PartType part, Direction[] d, int[] position) {
         int xPos = position[0];
         int yPos = position[1];
-        ArrayList<Parts> parts = new ArrayList<Parts>();
+        Parts[][] parts = new Parts[xPos][yPos];
         switch (part.getValue()) {
-            case 1: parts.add(new Wire(d, xPos, yPos));
+            case 1: parts[xPos-1][yPos-1] = new Wire(d, xPos, yPos);
                 break;
-            case 2: parts.add(new AndGate(d, xPos, yPos));
+            case 2: parts[xPos-1][yPos-1] = new AndGate(d, xPos, yPos);
                 break;
-            case 3: parts.add(new OrGate(d, xPos, yPos));
+            case 3: parts[xPos-1][yPos-1] = new OrGate(d, xPos, yPos);
                 break;
-            case 4: parts.add(new NotGate(d, xPos, yPos));
+            case 4: parts[xPos-1][yPos-1] = new NotGate(d, xPos, yPos);
                 break;
-            case 5: parts.add(new NAndGate(d, xPos, yPos));
+            case 5: parts[xPos-1][yPos-1] = new NAndGate(d, xPos, yPos);
                 break;
-            case 6: parts.add(new NOrGate(d, xPos, yPos));
+            case 6: parts[xPos-1][yPos-1] = new NOrGate(d, xPos, yPos);
                 break;
-            case 7: parts.add(new XOrGate(d, xPos, yPos));
+            case 7: parts[xPos-1][yPos-1] = new XOrGate(d, xPos, yPos);
                 break;
             default:System.out.println("unknown command");
                 break;
@@ -106,7 +106,7 @@ class Commands {
         return parts;
     }
 
-    void movePart(Parts part, int[] pos) {
+    static void movePart(Parts part, int[] pos) {
         part.move(pos[0], pos[1]);
     }
 
@@ -114,8 +114,13 @@ class Commands {
         part.rotate(direction);
     }
 
-    void searchPart(Parts part, int[] pos) {
+    static Parts searchPart(Parts[][] part, int[] pos) { return part[pos[0]][pos[1]];}
 
+    static void execute() {} //Todo
+
+    static Parts[][] deletePart(Parts[][] parts, int[] pos) {
+        parts[pos[0]][pos[1]] = null;
+        return parts;
     }
 }
 

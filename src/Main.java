@@ -8,6 +8,7 @@ public class Main extends JFrame {
         int xCoordinate = 10;
         int yCoordinate = 8;
         Map map = new Map();
+        Console console = new Console(xCoordinate, yCoordinate);
         JFrame frame = map.createMap(xCoordinate,yCoordinate);
         frame.setFont(new Font("System", Font.BOLD, 0));
 
