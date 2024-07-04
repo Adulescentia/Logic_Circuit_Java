@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10bc5407-f494-49a7-bc80-f1eed8a95d64" name="변경" comment="5. 틀 완료">
+    <list default="true" id="10bc5407-f494-49a7-bc80-f1eed8a95d64" name="변경" comment="7. parts 불필요 제거">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Parts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parts.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,18 +25,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Adulescentia&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Adulescentia/Logic_Circuit_Java.git&quot;,
-    &quot;accountId&quot;: &quot;1aabbdf6-97e8-4bee-82b1-f1432832e245&quot;
-  }
-}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -52,12 +39,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;애플리케이션.CircuitFrame.executor&quot;: &quot;Run&quot;,
     &quot;애플리케이션.Frame.executor&quot;: &quot;Run&quot;,
     &quot;애플리케이션.Main.executor&quot;: &quot;Run&quot;
@@ -103,39 +88,7 @@
       <option name="project" value="LOCAL" />
       <updated>1719930373665</updated>
     </task>
-    <task id="LOCAL-00004" summary="2.변경">
-      <option name="closed" value="true" />
-      <created>1719988983188</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1719988983188</updated>
-    </task>
-    <task id="LOCAL-00005" summary="3.변경">
-      <option name="closed" value="true" />
-      <created>1719993534101</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1719993534101</updated>
-    </task>
-    <task id="LOCAL-00006" summary="4.변경">
-      <option name="closed" value="true" />
-      <created>1720001246505</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1720001246505</updated>
-    </task>
-    <task id="LOCAL-00007" summary="5. 틀 완료">
-      <option name="closed" value="true" />
-      <created>1720061331374</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1720061331374</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,10 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.&#10;console - basic&#10;wires - direction&#10;main - frame &amp; grid" />
-    <MESSAGE value="2.변경" />
-    <MESSAGE value="3.변경" />
-    <MESSAGE value="4.변경" />
-    <MESSAGE value="5. 틀 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="5. 틀 완료" />
+    <MESSAGE value="7. parts 불필요 제거" />
+    <option name="LAST_COMMIT_MESSAGE" value="7. parts 불필요 제거" />
   </component>
 </project>
