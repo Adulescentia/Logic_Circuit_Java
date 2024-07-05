@@ -33,44 +33,69 @@ class Commands {
     static CommandType defineCommandType(String command) {
         CommandType commandType = null;
         switch (command) {
-            case "new":     commandType = CommandType.NEW;
-                            break;
-            case "execute": commandType = CommandType.EXECUTE;
-                            break;
-            case "move":    commandType = CommandType.MOVE;
-                            break;
-            case "rotate":  commandType = CommandType.ROTATE;
-                            break;
-            case "delete":  commandType = CommandType.DELETE;
-                            break;
-            default:        commandType = CommandType.NONE;
-                            System.out.println("Unknown command");
-                            break;
+            case "new":
+                commandType = CommandType.NEW;
+                break;
+            case "execute":
+                commandType = CommandType.EXECUTE;
+                break;
+            case "move":
+                commandType = CommandType.MOVE;
+                break;
+            case "rotate":
+                commandType = CommandType.ROTATE;
+                break;
+            case "connect":
+                commandType = CommandType.CONNECT;
+                break;
+            case "delete":
+                commandType = CommandType.DELETE;
+                break;
+            default:
+                commandType = CommandType.NONE;
+                System.out.println("Unknown command");
+                break;
         }
         return commandType;
     }
 
     static PartType definePartType(String part) {
-        PartType partType = null;
+        PartType partType;
         switch (part) {
-            case "wire":    partType = PartType.WIRE;
+            case "and":
+                return PartType.AND;
                 break;
-            case "and":     partType = PartType.AND;
+            case "or":
+                return PartType.OR;
                 break;
-            case "or":      partType = PartType.OR;
+            case "not":
+                return PartType.NOT;
                 break;
-            case "not":     partType = PartType.NOT;
+            case "nand":
+                return PartType.NAND;
                 break;
-            case "nand":    partType = PartType.NAND;
+            case "nor":
+                return PartType.NOR;
                 break;
-            case "nor":     partType = PartType.NOR;
+            case "xor":
+                return PartType.XOR;
                 break;
-            case "xor":     partType = PartType.XOR;
+            case "xnor":
+                return PartType.XNOR;
                 break;
-            default:        System.out.println("Unknown part");
+            case "button":
+                return PartType.BUTTON;
                 break;
+            case "led":
+                return PartType.LED;
+                break;
+            default:
+                System.out.println("Unknown part");
+                return PartType.NONE;
+                break;
+
         }
-        return partType;
+
     }
 
     //actions
@@ -86,29 +111,42 @@ class Commands {
         return posInt;
     }
 
-    static Parts createParts(PartType partType, Direction[] d, int[] position) {
-        int xPos = position[0];
-        int yPos = position[1];
+    static Parts[][] createPart(PartType partType, Direction[] d, int[] position, Parts[][] parts) {
         Parts part = null;
+
         switch (partType.getValue()) {
-            case 1: part = new Wire(d, xPos, yPos);
+            case 1:
+                part = new AndGate(d, position);
                 break;
-            case 2: part = new AndGate(d, xPos, yPos);
+            case 2:
+                part = new OrGate(d, position);
                 break;
-            case 3: part = new OrGate(d, xPos, yPos);
+            case 3:
+                part = new NotGate(d, position);
                 break;
-            case 4: part = new NotGate(d, xPos, yPos);
+            case 4:
+                part = new NAndGate(d, position);
                 break;
-            case 5: part = new NAndGate(d, xPos, yPos);
+            case 5:
+                part = new NOrGate(d, position);
                 break;
-            case 6: part = new NOrGate(d, xPos, yPos);
+            case 6:
+                part = new XOrGate(d, position);
                 break;
-            case 7: part = new XOrGate(d, xPos, yPos);
+            case 7:
+                part = new XNOrGate(d, position);
+                break;
+            case 8:
+                part = new Button(d, position);
+                break;
+            case 9:
+                part = new LED(d, position);
                 break;
             default:System.out.println("unknown command");
                 break;
         }
-        return part;
+        parts[position[0]][position[1]] = part;
+        return parts;
     }
 
     static Parts[][] movePart(int[] originalPos, int[] pos, Parts[][] parts) {
@@ -121,17 +159,34 @@ class Commands {
         return parts;
     }
 
-    static void rotatePart(Parts part, Direction[] direction) {
-        part.rotate(direction);
+    static Parts[][] rotatePart(Parts part, Direction[] direction, Parts[][] parts) {
+        parts[part.xPos][part.yPos].rotate(direction);
+        return parts;
     }
 
     static Parts searchPart(Parts[][] part, int[] pos) { return part[pos[0]][pos[1]];}
 
-    static void execute() {} //Todo
+    static void execute(Parts[][] parts) {
+        Parts[][] rotatedPart = RotateArray.rotate90(parts);
+        for(Parts[] array : rotatedPart) {
+            for(Parts k : array) {
+                if (k != null || !(k instanceof Button)) {
+                    k.react();
+                }
+            }
+        }
+    } //Todo
+
+    static Parts[][] connectPart(int[] outputPos, int[] inputPos, Parts[][] parts) {
+        parts[inputPos[0]][inputPos[1]].outputConnect(parts[outputPos[0]][outputPos[1]]);   //input 받는 곳에 연결
+        parts[outputPos[0]][outputPos[1]].inputConnect(parts[inputPos[0]][inputPos[1]]);    //output 하는 곳에 연결
+        return parts;
+    }
 
     static Parts[][] deletePart(Parts[][] parts, int[] pos) {
         parts[pos[0]][pos[1]] = null;
         return parts;
     }
+
 }
 

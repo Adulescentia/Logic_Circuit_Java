@@ -8,14 +8,7 @@ public class Console {
     Parts[][] parts;
     int[] position;
 
-    //enums
-    CommandType commandType;
-    PartType partType;
-    Direction[] direction;
-
     //temps
-    String inputPosition;
-    Parts dummy = new Parts(direction, 0, 0);
 
     //scanner
     Scanner scanner = new Scanner(System.in);
@@ -35,24 +28,28 @@ public class Console {
     //methods
     void run () {
         splitCommand = scanner.nextLine().split(" ");
+        position = Commands.definePosition(splitCommand[1]);
         switch (Commands.defineCommandType(splitCommand[0]).getValue()) {
-            case 0:
+            case 0: //exception
                 System.out.println("Unknown command");
                 break;
-            case 1:
-                this.parts[Commands.definePosition(splitCommand[3])[0]][Commands.definePosition(splitCommand[3])[1]] = Commands.createParts(Commands.definePartType(splitCommand[1]), Commands.defineDirections(splitCommand[2]), Commands.definePosition(splitCommand[3])); //temp
+            case 1: //new
+                parts = Commands.createPart(Commands.definePartType(splitCommand[0]), Commands.defineDirections(splitCommand[2]), position, parts);
                 break;
-            case 2:
-                Commands.execute(); //Todo
+            case 2: //execute
+                Commands.execute(parts); //Todo
                 break;
-            case 3:
-                parts = Commands.movePart(Commands.definePosition(splitCommand[1]), Commands.definePosition(splitCommand[2]),parts);
+            case 3: //move
+                parts = Commands.movePart(position, Commands.definePosition(splitCommand[2]),parts);
                 break;
-            case 4:
-                Commands.rotatePart(Commands.searchPart(parts, Commands.definePosition(splitCommand[1])), Commands.defineDirections(splitCommand[2])); //temp
+            case 4: //rotate
+                parts = Commands.rotatePart(Commands.searchPart(parts,position), Commands.defineDirections(splitCommand[2]), parts); //temp
                 break;
-            case 5:
-                Commands.deletePart(parts, Commands.definePosition(splitCommand[1]));
+            case 5: //connect
+                parts = Commands.connectPart(position, Commands.definePosition(splitCommand[1]), parts);
+                break;
+            case 6: //delete
+                parts = Commands.deletePart(parts, Commands.definePosition(splitCommand[1]));
                 break;
         }
                     //T0-D0
@@ -60,7 +57,7 @@ public class Console {
             for(Parts k : array) {
                 System.out.print(k + " ");
             }
-            System.out.println();
+            System.out.println();//temp
         }
     }
 }

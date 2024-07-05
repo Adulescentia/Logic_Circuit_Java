@@ -1,5 +1,5 @@
 enum CommandType {
-    NONE(0), NEW(1),EXECUTE(2),MOVE(3), ROTATE(4), DELETE(5);
+    NONE(0), NEW(1),EXECUTE(2),MOVE(3), ROTATE(4), CONNECT(5), DELETE(6);
 
     private final int value;
     CommandType(int value) { this.value = value; }
@@ -17,7 +17,7 @@ enum Direction {
 }
 
 enum PartType {
-    NONE(0),WIRE(1), AND(2), OR(3), NOT(4), NAND(5), NOR(6), XOR(7);
+    NONE(0), AND(1), OR(2), NOT(3), NAND(4), NOR(5), XOR(6), XNOR(7), BUTTON(8), LED(9),;
 
     private final int value;
     PartType(int value) { this.value = value; }
