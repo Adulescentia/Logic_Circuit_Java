@@ -1,0 +1,52 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"10bc5407-f494-49a7-bc80-f1eed8a95d64\" name=\"변경\" comment=\"7. parts 불필요 제거\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Parts.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Parts.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2igtdJ1eet1sCQS5CVYoW8IgKi8\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;애플리케이션.CircuitFrame.executor&quot;: &quot;Run&quot;,\r\n    &quot;애플리케이션.Frame.executor&quot;: &quot;Run&quot;,\r\n    &quot;애플리케이션.Main.executor&quot;: &quot;Run&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [\r\n      &quot;directory&quot;,\r\n      &quot;module&quot;,\r\n      &quot;repository&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"애플리케이션 수준\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"디폴트 작업\">\r\n      <changelist id=\"10bc5407-f494-49a7-bc80-f1eed8a95d64\" name=\"변경\" comment=\"\" />\r\n      <created>1719924471736</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1719924471736</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"1.&#10;console - basic&#10;wires - direction&#10;main - frame &amp; grid\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1719929547740</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1719929547740</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"1.&#10;console - basic&#10;wires - direction&#10;main - frame &amp; grid\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1719929759532</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1719929759532</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"1.&#10;console - basic&#10;wires - direction&#10;main - frame &amp; grid\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1719930373665</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1719930373665</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"1.&#10;console - basic&#10;wires - direction&#10;main - frame &amp; grid\" />\r\n    <MESSAGE value=\"7. parts 불필요 제거\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"7. parts 불필요 제거\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 5c25b65648f7442668c77722da283b1e4553cbec)
++++ b/.idea/workspace.xml	(date 1720109396297)
+@@ -4,11 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="10bc5407-f494-49a7-bc80-f1eed8a95d64" name="변경" comment="7. parts 불필요 제거">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Parts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parts.java" afterDir="false" />
+-    </list>
++    <list default="true" id="10bc5407-f494-49a7-bc80-f1eed8a95d64" name="변경" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -88,7 +84,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1719930373665</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="7. parts 불필요 제거">
++      <option name="closed" value="true" />
++      <created>1720103721717</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1720103721717</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+Index: 자료/격자 배치 - JFrame.url
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/자료/격자 배치 - JFrame.url b/자료/격자 배치 - JFrame.url
+new file mode 100644
+--- /dev/null	(date 1719850129358)
++++ b/자료/격자 배치 - JFrame.url	(date 1719850129358)
+@@ -0,0 +1,2 @@
++[InternetShortcut]
++URL=https://m.blog.naver.com/so_yuns/222172786073

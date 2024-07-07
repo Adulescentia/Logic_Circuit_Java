@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10bc5407-f494-49a7-bc80-f1eed8a95d64" name="변경" comment="5. 틀 완료" />
+    <list default="true" id="10bc5407-f494-49a7-bc80-f1eed8a95d64" name="변경" comment="7. parts 불필요 제거">
+      <change afterPath="$PROJECT_DIR$/10315 손성우 학교자율과정 보고서 - [논리회로의 수학적 특징과 Java를 이용한 시뮬레이터 제작].docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/AND.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/BUTTON.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/LED.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/NAND.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/NONE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/NOR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/NOT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/OR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/XNOR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/XOR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/자료/frame.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/자료/격자 배치 - JFrame.url" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-07-05__9_37___.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-07-05__9_37___.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Enums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,18 +43,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Adulescentia&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Adulescentia/Logic_Circuit_Java.git&quot;,
-    &quot;accountId&quot;: &quot;1aabbdf6-97e8-4bee-82b1-f1432832e245&quot;
-  }
-}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -40,19 +50,21 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2igtdJ1eet1sCQS5CVYoW8IgKi8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "inlay.hints",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "애플리케이션.CircuitFrame.executor": "Run",
     "애플리케이션.Frame.executor": "Run",
     "애플리케이션.Main.executor": "Run"
@@ -65,6 +77,12 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\boyof\Desktop\LogicCiruit-JAVA\LogicCircuit\src" />
+      <recent name="C:\Users\boyof\Desktop\LogicCiruit-JAVA\LogicCircuit\images" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
@@ -98,47 +116,7 @@
       <option name="project" value="LOCAL" />
       <updated>1719930373665</updated>
     </task>
-    <task id="LOCAL-00004" summary="2.변경">
-      <option name="closed" value="true" />
-      <created>1719988983188</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1719988983188</updated>
-    </task>
-    <task id="LOCAL-00005" summary="3.변경">
-      <option name="closed" value="true" />
-      <created>1719993534101</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1719993534101</updated>
-    </task>
-    <task id="LOCAL-00006" summary="4.변경">
-      <option name="closed" value="true" />
-      <created>1720001246505</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1720001246505</updated>
-    </task>
-    <task id="LOCAL-00007" summary="5. 틀 완료">
-      <option name="closed" value="true" />
-      <created>1720061331374</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1720061331374</updated>
-    </task>
-    <task id="LOCAL-00008" summary="5. 틀 완료">
-      <option name="closed" value="true" />
-      <created>1720178610812</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1720178610812</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,11 +131,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1.&#10;console - basic&#10;wires - direction&#10;main - frame &amp; grid" />
-    <MESSAGE value="2.변경" />
-    <MESSAGE value="3.변경" />
-    <MESSAGE value="4.변경" />
-    <MESSAGE value="5. 틀 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="5. 틀 완료" />
+    <MESSAGE value="7. parts 불필요 제거" />
+    <option name="LAST_COMMIT_MESSAGE" value="7. parts 불필요 제거" />
   </component>
 </project>

@@ -7,10 +7,10 @@ public class Main extends JFrame {
     public static void main(String[] args) {
         int xCoordinate = 10;
         int yCoordinate = 8;
-        Map map = new Map();
+        Map map = new Map(xCoordinate, yCoordinate);
         Console console = new Console(xCoordinate, yCoordinate);
-        JFrame frame = map.createMap(xCoordinate,yCoordinate);
-        frame.setFont(new Font("System", Font.BOLD, 0));
+        JFrame frame = map.createMap();
+
 
         //basic settings
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);

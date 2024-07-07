@@ -3,10 +3,11 @@ import java.util.*;
 public class Console {
 
     //vars
-    int xCoordinate = 10; //창 넓이
-    int yCoordinate = 8; //창 넓이
+    int xCoordinate; //창 넓이
+    int yCoordinate; //창 넓이
     Parts[][] parts;
     int[] position;
+    Map map = new Map(xCoordinate,yCoordinate);
 
     //temps
 
@@ -20,7 +21,7 @@ public class Console {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
         this.parts = new Parts[xCoordinate][yCoordinate];
-
+//        map.createMap(xCoordinate,yCoordinate);
     }
 
 
@@ -34,7 +35,7 @@ public class Console {
                 System.out.println("Unknown command");
                 break;
             case 1: //new
-                parts = Commands.createPart(Commands.definePartType(splitCommand[0]), Commands.defineDirections(splitCommand[2]), position, parts);
+                parts = Commands.createPart(Commands.definePartType(splitCommand[3]), Commands.defineDirections(splitCommand[2]), position, parts, map);
                 break;
             case 2: //execute
                 Commands.execute(parts); //Todo

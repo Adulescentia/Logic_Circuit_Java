@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
 
 class Commands {
 
@@ -31,72 +29,41 @@ class Commands {
     }
 
     static CommandType defineCommandType(String command) {
-        CommandType commandType = null;
-        switch (command) {
-            case "new":
-                commandType = CommandType.NEW;
-                break;
-            case "execute":
-                commandType = CommandType.EXECUTE;
-                break;
-            case "move":
-                commandType = CommandType.MOVE;
-                break;
-            case "rotate":
-                commandType = CommandType.ROTATE;
-                break;
-            case "connect":
-                commandType = CommandType.CONNECT;
-                break;
-            case "delete":
-                commandType = CommandType.DELETE;
-                break;
-            default:
-                commandType = CommandType.NONE;
+        return switch (command) {
+            case "new" -> CommandType.NEW;
+            case "execute" -> CommandType.EXECUTE;
+            case "move" -> CommandType.MOVE;
+            case "rotate" -> CommandType.ROTATE;
+            case "connect" -> CommandType.CONNECT;
+            case "delete" -> CommandType.DELETE;
+            default -> {
                 System.out.println("Unknown command");
-                break;
-        }
-        return commandType;
+                yield CommandType.NONE;
+            }
+        };
+
     }
 
     static PartType definePartType(String part) {
-        PartType partType;
-        switch (part) {
-            case "and":
-                return PartType.AND;
-                break;
-            case "or":
-                return PartType.OR;
-                break;
-            case "not":
-                return PartType.NOT;
-                break;
-            case "nand":
-                return PartType.NAND;
-                break;
-            case "nor":
-                return PartType.NOR;
-                break;
-            case "xor":
-                return PartType.XOR;
-                break;
-            case "xnor":
-                return PartType.XNOR;
-                break;
-            case "button":
-                return PartType.BUTTON;
-                break;
-            case "led":
-                return PartType.LED;
-                break;
-            default:
+        return switch (part) {
+            case "and" -> PartType.AND;
+            case "or" -> PartType.OR;
+            case "not" -> PartType.NOT;
+            case "nand" -> PartType.NAND;
+            case "nor" -> PartType.NOR;
+            case "xor" -> PartType.XOR;
+            case "xnor" -> PartType.XNOR;
+            case "button" -> PartType.BUTTON;
+            case "led" -> PartType.LED;
+            default -> {
                 System.out.println("Unknown part");
-                return PartType.NONE;
-                break;
-
-        }
+                yield PartType.NONE;
+            }
+        };
 
     }
+
+
 
     //actions
     static int[] definePosition(String position) {
@@ -111,12 +78,13 @@ class Commands {
         return posInt;
     }
 
-    static Parts[][] createPart(PartType partType, Direction[] d, int[] position, Parts[][] parts) {
+    static Parts[][] createPart(PartType partType, Direction[] d, int[] position, Parts[][] parts, Map map) {
         Parts part = null;
 
         switch (partType.getValue()) {
             case 1:
                 part = new AndGate(d, position);
+                map.visualizationParts();
                 break;
             case 2:
                 part = new OrGate(d, position);
@@ -145,7 +113,7 @@ class Commands {
             default:System.out.println("unknown command");
                 break;
         }
-        parts[position[0]][position[1]] = part;
+        parts[position[0]-1][position[1]-1] = part;
         return parts;
     }
 
@@ -170,7 +138,7 @@ class Commands {
         Parts[][] rotatedPart = RotateArray.rotate90(parts);
         for(Parts[] array : rotatedPart) {
             for(Parts k : array) {
-                if (k != null || !(k instanceof Button)) {
+                if (k != null && !(k instanceof Button)) {
                     k.react();
                 }
             }
