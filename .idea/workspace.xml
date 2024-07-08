@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10bc5407-f494-49a7-bc80-f1eed8a95d64" name="변경" comment="5. 틀 완료">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/24__7__4___11_30__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/24__7__4___11_30__________.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/24__7__7___7_53__________.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/24__7__7___7_53__________.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enums.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RotateArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RotateArray.java" afterDir="false" />
-    </list>
+    <list default="true" id="10bc5407-f494-49a7-bc80-f1eed8a95d64" name="변경" comment="10. rotate ㅅㅄㅄㅄㅄㅄㅄㅄㅄㅄㅂㅈㅅㅄㅄㅄㅄㅅㅅㅅㅄㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅄㅄㅄㅄㅄㅄㅅㅅㅅㅅㅅㅅ" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720178610812</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="10. rotate ㅅㅄㅄㅄㅄㅄㅄㅄㅄㅄㅂㅈㅅㅄㅄㅄㅄㅅㅅㅅㅄㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅄㅄㅄㅄㅄㅄㅅㅅㅅㅅㅅㅅ">
+      <option name="closed" value="true" />
+      <created>1720416477223</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720416477223</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,6 +166,7 @@
     <MESSAGE value="3.변경" />
     <MESSAGE value="4.변경" />
     <MESSAGE value="5. 틀 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="5. 틀 완료" />
+    <MESSAGE value="10. rotate ㅅㅄㅄㅄㅄㅄㅄㅄㅄㅄㅂㅈㅅㅄㅄㅄㅄㅅㅅㅅㅄㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅄㅄㅄㅄㅄㅄㅅㅅㅅㅅㅅㅅ" />
+    <option name="LAST_COMMIT_MESSAGE" value="10. rotate ㅅㅄㅄㅄㅄㅄㅄㅄㅄㅄㅂㅈㅅㅄㅄㅄㅄㅅㅅㅅㅄㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅅㅄㅄㅄㅄㅄㅄㅅㅅㅅㅅㅅㅅ" />
   </component>
 </project>
