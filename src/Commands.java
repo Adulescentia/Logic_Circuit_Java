@@ -78,13 +78,12 @@ class Commands {
         return posInt;
     }
 
-    static Parts[][] createPart(PartType partType, Direction[] d, int[] position, Parts[][] parts, Map map) {
+    static Parts[][] createPart(PartType partType, Direction[] d, int[] position, Parts[][] parts, Map map, String SParts) {
         Parts part = null;
 
         switch (partType.getValue()) {
             case 1:
                 part = new AndGate(d, position);
-                map.visualizationParts();
                 break;
             case 2:
                 part = new OrGate(d, position);
@@ -119,7 +118,7 @@ class Commands {
 
     static Parts[][] movePart(int[] originalPos, int[] pos, Parts[][] parts) {
         try {
-            parts[originalPos[0]][originalPos[1]].move(pos[0], pos[1]);
+            parts[originalPos[0]-1][originalPos[1]-1].move(pos[0]-1, pos[1]-1);
         } catch (NullPointerException e1) {
             System.out.println("There is noting");
         }
@@ -134,20 +133,35 @@ class Commands {
 
     static Parts searchPart(Parts[][] part, int[] pos) { return part[pos[0]][pos[1]];}
 
-    static void execute(Parts[][] parts) {
+    static void execute(Parts[][] parts, Map map) {
         Parts[][] rotatedPart = RotateArray.rotate90(parts);
         for(Parts[] array : rotatedPart) {
             for(Parts k : array) {
-                if (k != null && !(k instanceof Button)) {
-                    k.react();
+                System.out.print(k + " ");
+            }
+            System.out.println();//temp
+        }
+        for(Parts[] array : rotatedPart) {
+            for(Parts k : array) {
+                System.out.println(1);
+                if (k instanceof Button) {
+                    System.out.println(2);
+                    k.react(map.buttonList.indexOf(k));
+                } else if (k instanceof LED) {
+                    System.out.println(3);
+                    System.out.println("dddd");
+                    k.react(map.LEDList.indexOf(k));
+                } else if (k != null) {
+                    System.out.println(4);
+                    k.react(0);
                 }
             }
         }
     } //Todo
 
     static Parts[][] connectPart(int[] outputPos, int[] inputPos, Parts[][] parts) {
-        parts[inputPos[0]][inputPos[1]].outputConnect(parts[outputPos[0]][outputPos[1]]);   //input 받는 곳에 연결
-        parts[outputPos[0]][outputPos[1]].inputConnect(parts[inputPos[0]][inputPos[1]]);    //output 하는 곳에 연결
+        parts[inputPos[0]-1][inputPos[1]-1].outputConnect(parts[outputPos[0]-1][outputPos[1]-1]);   //input 받는 곳에 연결
+        parts[outputPos[0]-1][outputPos[1]-1].inputConnect(parts[inputPos[0]-1][inputPos[1]-1]);    //output 하는 곳에 연결
         return parts;
     }
 

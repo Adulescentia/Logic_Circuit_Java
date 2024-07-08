@@ -3,11 +3,12 @@ import java.util.*;
 public class Console {
 
     //vars
+    boolean enabled = true;
     int xCoordinate; //창 넓이
     int yCoordinate; //창 넓이
     Parts[][] parts;
     int[] position;
-    Map map = new Map(xCoordinate,yCoordinate);
+    Map map;
 
     //temps
 
@@ -21,7 +22,8 @@ public class Console {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
         this.parts = new Parts[xCoordinate][yCoordinate];
-//        map.createMap(xCoordinate,yCoordinate);
+        this.map = new Map(xCoordinate,yCoordinate);
+        this.map.createGrid();
     }
 
 
@@ -35,10 +37,18 @@ public class Console {
                 System.out.println("Unknown command");
                 break;
             case 1: //new
-                parts = Commands.createPart(Commands.definePartType(splitCommand[3]), Commands.defineDirections(splitCommand[2]), position, parts, map);
+                parts = Commands.createPart(Commands.definePartType(splitCommand[3]), Commands.defineDirections(splitCommand[2]), position, parts, map, splitCommand[3]);
+                map.visualizationParts(position, Commands.definePartType(splitCommand[3]));
+                if (splitCommand[3].equals("button")) {
+                    map.buttonList.add((Button) parts[position[0]-1][position[1]-1]);
+                } else if (splitCommand[3].equals("led")) {
+                    map.LEDList.add((LED) parts[position[0]-1][position[1]-1]);
+                }
                 break;
             case 2: //execute
-                Commands.execute(parts); //Todo
+                map.createMap();
+                Commands.execute(parts,map);//Todo
+                this.enabled = false;
                 break;
             case 3: //move
                 parts = Commands.movePart(position, Commands.definePosition(splitCommand[2]),parts);

@@ -1,12 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Map {
     int xCoordinate;
     int yCoordinate;
     PartType partType;
     JButton[][] grid;
+    String part = "and";
     JFrame frame = new JFrame();
+    ArrayList<LED> LEDList = new ArrayList<LED>();
+    ArrayList<Button> buttonList = new ArrayList<Button>();
     Map(int xCoordinate, int yCoordinate) {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
@@ -17,22 +21,21 @@ public class Map {
     void createGrid () {
         for (int yPos = yCoordinate; yPos >= 1; yPos--) {
             for (int xPos = 1; xPos <= xCoordinate; xPos++) {
-                grid[xPos -1][yPos -1] = new JButton(xPos + "," + yPos);
+                grid[xPos -1][yPos -1] = new JButton("[" + xPos + "," + yPos + "]");
             }
         }
     }
 
-    JFrame createMap() {
+    void createMap() {
         for (int yPos = yCoordinate; yPos >= 1; yPos--) {
             for (int xPos = 1; xPos <= xCoordinate; xPos++) {
                 frame.add(grid[xPos -1][yPos -1]);
             }
         }
-        return frame;
     }
-    void mapping() {} //Todo
-    void visualizationParts(int xPos, int yPos, String part) {
-        partType = Commands.definePartType(part);
-        grid[xPos-1][yPos-1] = new JButton(Commands.definePartType(part).getImage());
+    void visualizationParts(int[] position, PartType part) {
+        int xPos = position[0];
+        int yPos = position[1];
+        grid[xPos-1][yPos-1] = new JButton("#=#" + part.getName() + "#=#");
     }
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 //Logic gates
 public abstract class Parts {
@@ -17,8 +18,6 @@ public abstract class Parts {
         this.position = position;
     }
 
-    int[] getLocation () { return position; }
-
     //actions
     void move (int x, int y) {
         xPos = x;
@@ -31,7 +30,9 @@ public abstract class Parts {
 
     void outputConnect (Parts part) { outputConnects.add(part); }
 
-    void react () {}
+    void react (int index) {}
+
+
 }
 
 class AndGate extends Parts {
@@ -95,20 +96,20 @@ class XNOrGate extends Parts {
     XNOrGate(Direction[] direction, int[] position) {
         super(direction, position);
     }
-    void react () {
-        result = inputConnects.get(0).result == inputConnects.get(1).result;
-    }
+
 }
 
 //ETCs
 class Button extends Parts {
-
+    Scanner scanner = new Scanner(System.in);
     Button(Direction[] direction, int[] position) {
         super(direction, position);
     }
 
-    void on () { result = true; } //
-    void off () { result = false; }
+    void react (int index) {
+        System.out.println("Button " + index + " >>>");
+        result = scanner.nextBoolean();
+    }
 }
 
 class LED extends Parts {
@@ -117,6 +118,11 @@ class LED extends Parts {
         super(direction, position);
     }
 
-    void react () { result = inputConnects.get(0).result; }
+    void react (int index) {
+        result = inputConnects.get(0).result == inputConnects.get(1).result;
+        System.out.println("LED " + index + ">>> " + result);
+    }
+
+
 
 }
