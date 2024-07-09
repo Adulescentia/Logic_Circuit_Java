@@ -11,8 +11,7 @@ public abstract class Parts {
     ArrayList<Parts> outputConnects = new ArrayList<>();
     boolean result;
 
-    Parts (Direction[] direction, int[] position) {
-        this.direction = direction;
+    Parts ( int[] position ) {
         this.xPos = position[0];
         this.yPos = position[1];
         this.position = position;
@@ -36,65 +35,68 @@ public abstract class Parts {
 }
 
 class AndGate extends Parts {
-    AndGate(Direction[] direction, int[] position) {
-        super(direction, position);
+    AndGate(int[] position) {
+        super( position);
     }
-    void react () {
-        result = inputConnects.get(0).result && inputConnects.get(1).result;
+    void react (int i) {
+        result = outputConnects.get(0).result && outputConnects.get(1).result;
     }
 
 
 }
 
 class OrGate extends Parts {
-    OrGate(Direction[] direction, int[] position) {
-        super(direction, position);
+    OrGate(int[] position) {
+        super(position);
 
     }
-    void react () {
-        result = inputConnects.get(0).result || inputConnects.get(1).result;
+    void react (int i) {
+        result = outputConnects.get(0).result || outputConnects.get(1).result;
     }
 }
 
 class NotGate extends Parts {
-    NotGate(Direction[] direction, int[] position) {
-        super(direction, position);
+    NotGate(int[] position) {
+        super(position);
     }
-    void react () {
-        result = !inputConnects.get(0).result;
+    void react (int i) {
+        result = !outputConnects.get(0).result;
     }
 }
 
 class NAndGate extends Parts {
-    NAndGate(Direction[] direction, int[] position) {
-        super(direction, position);
+    NAndGate(int[] position) {
+        super(position);
     }
-    void react () {
-        result = !(inputConnects.get(0).result && inputConnects.get(1).result);
+    void react (int i) {
+        result = !(outputConnects.get(0).result && outputConnects.get(1).result);
     }
 }
 
 class NOrGate extends Parts {
-    NOrGate(Direction[] direction, int[] position) {
-        super(direction, position);
+    NOrGate(int[] position) {
+        super(position);
     }
-    void react () {
-        result = !(inputConnects.get(0).result || inputConnects.get(1).result);
+    void react (int i) {
+        result = !(outputConnects.get(0).result || outputConnects.get(1).result);
     }
 }
 
 class XOrGate extends Parts {
-    XOrGate(Direction[] direction, int[] position) {
-        super(direction, position);
+    XOrGate(int[] position) {
+        super(position);
     }
-    void react () {
-        result = inputConnects.get(0).result != inputConnects.get(1).result;
-    }   //의심스러움
+    void react (int i) {
+        result = outputConnects.get(0).result ^ outputConnects.get(1).result;
+    }
 }
 
 class XNOrGate extends Parts {
-    XNOrGate(Direction[] direction, int[] position) {
-        super(direction, position);
+    XNOrGate(int[] position) {
+        super(position);
+    }
+    void react (int i) {
+        result = !(outputConnects.get(0).result ^ outputConnects.get(1).result);
     }
 
 }
@@ -102,25 +104,25 @@ class XNOrGate extends Parts {
 //ETCs
 class Button extends Parts {
     Scanner scanner = new Scanner(System.in);
-    Button(Direction[] direction, int[] position) {
-        super(direction, position);
+    Button(int[] position) {
+        super(position);
     }
 
     void react (int index) {
-        System.out.println("Button " + index + " >>>");
+        System.out.println("Button " + (index + 1) + " >>>");
         result = scanner.nextBoolean();
     }
 }
 
 class LED extends Parts {
 
-    LED(Direction[] direction, int[] position) {
-        super(direction, position);
+    LED(int[] position) {
+        super(position);
     }
 
     void react (int index) {
-        result = inputConnects.get(0).result == inputConnects.get(1).result;
-        System.out.println("LED " + index + ">>> " + result);
+        result = outputConnects.get(0).result;
+        System.out.println("LED " + (index + 1) + ">>> " + result);
     }
 
 

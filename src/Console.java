@@ -37,12 +37,18 @@ public class Console {
                 System.out.println("Unknown command");
                 break;
             case 1: //new
-                parts = Commands.createPart(Commands.definePartType(splitCommand[3]), Commands.defineDirections(splitCommand[2]), position, parts, map, splitCommand[3]);
-                map.visualizationParts(position, Commands.definePartType(splitCommand[3]));
-                if (splitCommand[3].equals("button")) {
+                parts = Commands.createPart(Commands.definePartType(splitCommand[2]), position, parts, map, splitCommand[2]);
+                map.visualizationParts(position, Commands.definePartType(splitCommand[2]));
+                if (splitCommand[2].equals("button")) {
                     map.buttonList.add((Button) parts[position[0]-1][position[1]-1]);
-                } else if (splitCommand[3].equals("led")) {
+                } else if (splitCommand[2].equals("led")) {
                     map.LEDList.add((LED) parts[position[0]-1][position[1]-1]);
+                }
+                for(Parts[] array : parts) {
+                    for(Parts k : array) {
+                        System.out.print(k + " ");
+                    }
+                    System.out.println();//temp
                 }
                 break;
             case 2: //execute
@@ -51,24 +57,19 @@ public class Console {
                 this.enabled = false;
                 break;
             case 3: //move
-                parts = Commands.movePart(position, Commands.definePosition(splitCommand[2]),parts);
+                Commands.movePart(position, Commands.definePosition(splitCommand[2]), parts);
                 break;
             case 4: //rotate
-                parts = Commands.rotatePart(Commands.searchPart(parts,position), Commands.defineDirections(splitCommand[2]), parts); //temp
+                Commands.rotatePart(Commands.searchPart(parts, position), Commands.defineDirections(splitCommand[2]), parts);
                 break;
             case 5: //connect
-                parts = Commands.connectPart(position, Commands.definePosition(splitCommand[1]), parts);
+                Commands.connectPart(position, Commands.definePosition(splitCommand[2]), parts);
                 break;
             case 6: //delete
                 parts = Commands.deletePart(parts, Commands.definePosition(splitCommand[1]));
                 break;
         }
                     //T0-D0
-        for(Parts[] array : parts) {
-            for(Parts k : array) {
-                System.out.print(k + " ");
-            }
-            System.out.println();//temp
-        }
+
     }
 }

@@ -78,36 +78,36 @@ class Commands {
         return posInt;
     }
 
-    static Parts[][] createPart(PartType partType, Direction[] d, int[] position, Parts[][] parts, Map map, String SParts) {
+    static Parts[][] createPart(PartType partType, int[] position, Parts[][] parts, Map map, String SParts) {
         Parts part = null;
 
         switch (partType.getValue()) {
             case 1:
-                part = new AndGate(d, position);
+                part = new AndGate(position);
                 break;
             case 2:
-                part = new OrGate(d, position);
+                part = new OrGate(position);
                 break;
             case 3:
-                part = new NotGate(d, position);
+                part = new NotGate(position);
                 break;
             case 4:
-                part = new NAndGate(d, position);
+                part = new NAndGate(position);
                 break;
             case 5:
-                part = new NOrGate(d, position);
+                part = new NOrGate(position);
                 break;
             case 6:
-                part = new XOrGate(d, position);
+                part = new XOrGate(position);
                 break;
             case 7:
-                part = new XNOrGate(d, position);
+                part = new XNOrGate(position);
                 break;
             case 8:
-                part = new Button(d, position);
+                part = new Button(position);
                 break;
             case 9:
-                part = new LED(d, position);
+                part = new LED(position);
                 break;
             default:System.out.println("unknown command");
                 break;
@@ -134,25 +134,28 @@ class Commands {
     static Parts searchPart(Parts[][] part, int[] pos) { return part[pos[0]][pos[1]];}
 
     static void execute(Parts[][] parts, Map map) {
-        Parts[][] rotatedPart = RotateArray.rotate90(parts);
-        for(Parts[] array : rotatedPart) {
+        Parts[][] rotatedPart = RotateArray.rotate90(parts, map.xCoordinate, map.yCoordinate);
+        for(Parts[] array : parts) {
             for(Parts k : array) {
-                System.out.print(k + " ");
-            }
-            System.out.println();//temp
-        }
-        for(Parts[] array : rotatedPart) {
-            for(Parts k : array) {
-                System.out.println(1);
                 if (k instanceof Button) {
-                    System.out.println(2);
                     k.react(map.buttonList.indexOf(k));
                 } else if (k instanceof LED) {
-                    System.out.println(3);
-                    System.out.println("dddd");
                     k.react(map.LEDList.indexOf(k));
+                } else if (k instanceof AndGate) {
+                    k.react(0);
+                } else if (k instanceof OrGate) {
+                    k.react(0);
+                } else if (k instanceof NotGate) {
+                    k.react(0);
+                } else if (k instanceof NAndGate) {
+                    k.react(0);
+                } else if (k instanceof NOrGate) {
+                    k.react(0);
+                } else if (k instanceof XOrGate) {
+                    k.react(0);
+                }  else if (k instanceof XNOrGate) {
+                    k.react(0);
                 } else if (k != null) {
-                    System.out.println(4);
                     k.react(0);
                 }
             }

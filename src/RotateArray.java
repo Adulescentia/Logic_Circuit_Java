@@ -1,12 +1,16 @@
 public class RotateArray {
-    public static Parts[][] rotate90(Parts[][] arr){
+    public static Parts[][] rotate90(Parts[][] arr, int xCoordinate, int yCoordinate) {
+        int n = xCoordinate;
+        int m = yCoordinate;
+        int num = 1;
 
-        for(Parts[] array : arr) {
-            for(Parts k : array) {
 
+        Parts[][] arr2 = new Parts[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                arr2[i][j] = arr[j][m - 1 - i]; // ##핵심 코드##
             }
-            System.out.println();//temp
         }
-        return rotatedArr;
+        return arr2;
     }
 }
